@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ComponenteBComponent } from '../componente-b/componente-b';
 import { ComponenteCComponent } from '../componente-c/componente-c';
+import { ColorService } from '../color';
 
 @Component({
   selector: 'app-componente-a',
@@ -11,37 +12,34 @@ import { ComponenteCComponent } from '../componente-c/componente-c';
 })
 export class ComponenteAComponent {
 
-  hexadecimal: string = '800020';
+  hexadecimalEscrito: string = '800020';
 
-  r: number = 128;
-  g: number = 0;
-  b: number = 32;
+  constructor(public colorService: ColorService) {
+  }
 
   cambiarHexadecimal(event: Event) {
     const input = event.target as HTMLInputElement;
-    this.hexadecimal = input.value;
+    this.hexadecimalEscrito = input.value;
   }
 
   mostrarColor() {
-    const hex = this.hexadecimal.replace('#', '');
-
-    if (hex.length === 6) {
-      this.r = parseInt(hex.substring(0, 2), 16);
-      this.g = parseInt(hex.substring(2, 4), 16);
-      this.b = parseInt(hex.substring(4, 6), 16);
-    }
+    this.colorService.cambiarDesdeHex(this.hexadecimalEscrito);
+    this.hexadecimalEscrito = this.colorService.hexadecimal();
   }
 
   cambiarR(valor: number) {
-    this.r = valor;
+    this.colorService.cambiarR(valor);
+    this.hexadecimalEscrito = this.colorService.hexadecimal();
   }
 
   cambiarG(valor: number) {
-    this.g = valor;
+    this.colorService.cambiarG(valor);
+    this.hexadecimalEscrito = this.colorService.hexadecimal();
   }
 
   cambiarB(valor: number) {
-    this.b = valor;
+    this.colorService.cambiarB(valor);
+    this.hexadecimalEscrito = this.colorService.hexadecimal();
   }
 }
 

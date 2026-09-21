@@ -5,7 +5,7 @@
     <input
       type="text"
       maxlength="7"
-      [value]="hexadecimal"
+      [value]="hexadecimalEscrito"
       (input)="cambiarHexadecimal($event)"
     >
 
@@ -21,28 +21,28 @@
 
       <app-componente-b
         letra="R"
-        [valor]="r"
+        [valor]="colorService.r()"
         (cambioValor)="cambiarR($event)">
       </app-componente-b>
 
       <app-componente-b
         letra="G"
-        [valor]="g"
+        [valor]="colorService.g()"
         (cambioValor)="cambiarG($event)">
       </app-componente-b>
 
       <app-componente-b
         letra="B"
-        [valor]="b"
+        [valor]="colorService.b()"
         (cambioValor)="cambiarB($event)">
       </app-componente-b>
 
     </div>
 
     <app-componente-c
-      [r]="r"
-      [g]="g"
-      [b]="b">
+      [r]="colorService.r()"
+      [g]="colorService.g()"
+      [b]="colorService.b()">
     </app-componente-c>
 
   </div>
