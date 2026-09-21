@@ -5,9 +5,9 @@ import { Injectable, signal, computed } from '@angular/core';
 })
 export class ColorService {
 
-  r = signal(128);
-  g = signal(0);
-  b = signal(32);
+  r = signal(30);
+  g = signal(58);
+  b = signal(95);
 
   hexadecimal = computed(() => {
     const rHex = this.r().toString(16).padStart(2, '0');

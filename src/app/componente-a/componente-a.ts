@@ -12,7 +12,7 @@ import { ColorService } from '../color';
 })
 export class ComponenteAComponent {
 
-  hexadecimalEscrito: string = '800020';
+  hexadecimalEscrito: string = '1E3A5F';
 
   constructor(public colorService: ColorService) {
   }
