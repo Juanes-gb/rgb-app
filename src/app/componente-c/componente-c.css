@@ -1,0 +1,12 @@
+.componente-c {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.cuadro {
+  width: 200px;
+  height: 120px;
+  border: 2px solid black;
+}
+

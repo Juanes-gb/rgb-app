@@ -1,0 +1,51 @@
+<div class="componente-a">
+
+  <div class="superior">
+
+    <input
+      type="text"
+      maxlength="7"
+      [value]="hexadecimal"
+      (input)="cambiarHexadecimal($event)"
+    >
+
+    <button (click)="mostrarColor()">
+      Show
+    </button>
+
+  </div>
+
+  <div class="inferior">
+
+    <div class="rgb">
+
+      <app-componente-b
+        letra="R"
+        [valor]="r"
+        (cambioValor)="cambiarR($event)">
+      </app-componente-b>
+
+      <app-componente-b
+        letra="G"
+        [valor]="g"
+        (cambioValor)="cambiarG($event)">
+      </app-componente-b>
+
+      <app-componente-b
+        letra="B"
+        [valor]="b"
+        (cambioValor)="cambiarB($event)">
+      </app-componente-b>
+
+    </div>
+
+    <app-componente-c
+      [r]="r"
+      [g]="g"
+      [b]="b">
+    </app-componente-c>
+
+  </div>
+
+</div>
+

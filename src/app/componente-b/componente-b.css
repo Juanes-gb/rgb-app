@@ -1,0 +1,19 @@
+.componente-b {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 15px;
+}
+
+label {
+  font-size: 30px;
+  font-weight: bold;
+  width: 30px;
+}
+
+input {
+  width: 80px;
+  padding: 8px;
+  font-size: 18px;
+}
+

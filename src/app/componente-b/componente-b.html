@@ -1,0 +1,14 @@
+<div class="componente-b">
+
+  <label>{{ letra() }}</label>
+
+  <input
+    type="number"
+    min="0"
+    max="255"
+    [value]="valor()"
+    (input)="cambiarValor($event)"
+  >
+
+</div>
+
